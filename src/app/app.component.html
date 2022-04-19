@@ -12,9 +12,16 @@
     />
     <title>Document</title>
   </head>
+  <header>
+    <ul class="list-group list-group-horizontal">
+      <li (click)="ShowCustomers()" class="list-group-item"><a>Customer</a></li>
+      <li (click)="ShowProducts()" class="list-group-item"><a>Product</a></li>
+      <li (click)="ShowOrders()" class="list-group-item"><a>Orders</a></li>
+    </ul>
+  </header>
   <body>
-    <h1>Test</h1>
-
-    <app-customer></app-customer>
+    <app-product *ngIf="ShowProduct"></app-product>
+    <app-order *ngIf="ShowOrder"></app-order>
+    <app-customer *ngIf="ShowCustomer"></app-customer>
   </body>
 </html>

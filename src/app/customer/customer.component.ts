@@ -2,6 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { customer } from '../Services/customers.service';
 import { HttpGetCustomerService } from '../Services/http-get-customer.service';
 
+
+//auth intersepter google http intercept
 @Component({
   selector: 'app-customer',
   templateUrl: './customer.component.html',
@@ -17,22 +19,22 @@ updatedCustomer? : customer;
   ngOnInit(): void {
     this.getCustomer();
   }
-onClickSubmit(): void {
+onSubmit(data: customer): void {
     this.updatedCustomer = this.valtPaket;
-
+console.log(data);
     if (!this.customers || !this.valtPaket) //not empty
     {
       return;
     }
-    const booking = new customer(this.namnet, this.bokningssvar); //skickar
-    this.bookingservice
-      .SkickaBokning(booking)
-      .subscribe((svar: Bokningscomfirm) => {
-        this.result = svar;
-      }); //får tilbaka
-    this.avbryt.emit(true);
-    //Skicka till kvitto
-    }
+    // const booking = new customer(this.namnet, this.bokningssvar); //skickar
+    // this.bookingservice
+    //   .SkickaBokning(booking)
+    //   .subscribe((svar: Bokningscomfirm) => {
+    //     this.result = svar;
+    //   }); //får tilbaka
+    // this.avbryt.emit(true);
+    // //Skicka till kvitto
+     }
 
   getCustomer(): void {
     this.httpService.getCustomers().subscribe((response: Array<customer>) => {
