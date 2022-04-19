@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <Div
+      ><p>customer works!</p>
+      <h1>Customer</h1>
+      <div *ngFor="let customer of customers">
+        <div class="border">
+          <form
+            (ngSubmit)="onClickSubmit(customer)"
+            action="submit"
+            class="col bokaform"
+          >
+            <div>
+              <label>FirstName : </label>
+              <input type="text" placeholder="{{ customer.firstName }}" />
+            </div>
+            <div>
+              <label>LastName : </label>
+              <input type="text" placeholder="{{ customer.lastName }}" />
+            </div>
+            <div>
+              <label>Email : </label>
+              <input type="text" placeholder="{{ customer.email }}" />
+            </div>
+            <div>
+              <label>Id : </label>
+              <input type="text" placeholder="{{ customer.id }}" />
+            </div>
+            <div>
+              <label>Adress : </label>
+              <input type="text" placeholder="address" />
+            </div>
+            <button class="submit">Submit</button>
+          </form>
+        </div>
+        <br />
+      </div>
+    </Div>
+  </body>
+</html>
