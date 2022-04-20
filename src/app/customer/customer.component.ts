@@ -39,8 +39,11 @@ this.CRUD =4 ;
 findCustomer(data: string): void
 {  
   this.httpService.getCustomerByEmail(data).subscribe((response: customer) =>{this.foundcustomer = response, console.log(this.foundcustomer)} )
-
 }
+onSubmitUpdate(data: customer){
+this.httpService.updateCustomer(data).subscribe();
+}
+
 onSubmitCreate(data: customer){
 this.httpService.postCustomer(data).subscribe();
 }

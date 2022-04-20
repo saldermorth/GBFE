@@ -1,6 +1,6 @@
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { catchError, Observable } from 'rxjs';
 import { customer } from './customers.service';
 
 @Injectable({
@@ -23,8 +23,13 @@ export class HttpGetCustomerService {
    return this.http.delete(deleteurl)
 
 }
+updateCustomer(hero: customer): Observable<customer> {
 
-
+   var updateurl = `${this.apiUrl}/${hero.id}`;
+  return this.http.put<customer>(updateurl, hero); 
+    
+}
+  
   getCustomers(): Observable<Array<customer>>{
     return this.http.get<Array<customer>>(this.apiUrl);
   }
@@ -36,10 +41,6 @@ return this.http.get<customer>(this.apiUrlEmail)
 
 
   }
-
-
-
-
    postCustomer(customer: customer): Observable<customer>{
    
 return this.http.post<customer>(this.apiUrl, customer)

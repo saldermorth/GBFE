@@ -97,21 +97,21 @@
       <div>
         <div class="border">
           <form
-            #customerPost="ngForm"
-            (ngSubmit)="onSubmit(customerPost.value)"
+            #customerPut="ngForm"
+            (ngSubmit)="onSubmitUpdate(customerPut.value)"
             action="submit"
             class="col bokaform"
           >
             <div>
               <label>Id : </label>
-              <input type="text" ngModel name="Id" placeholder="Id" />
+              <input type="text" ngModel name="id" placeholder="Id" />
             </div>
             <div>
               <label>FirstName : </label>
               <input
                 type="text"
                 ngModel
-                name="FirstName"
+                name="firstName"
                 placeholder="FirstName"
               />
             </div>
@@ -120,30 +120,30 @@
               <input
                 type="text"
                 ngModel
-                name="LastName"
+                name="lastName"
                 placeholder="Last Name"
               />
             </div>
             <div>
               <label>Email : </label>
-              <input type="text" ngModel name="Email" placeholder="Email" />
+              <input type="text" ngModel name="email" placeholder="Email" />
             </div>
             <div>
               <label>Street : </label>
-              <input type="text" name="Street" ngModel placeholder="Street" />
+              <input type="text" name="street" ngModel placeholder="Street" />
             </div>
             <div>
               <label>ZipCode : </label>
               <input
                 type="number"
-                name="ZipCode"
+                name="zipCode"
                 ngModel
                 placeholder="ZipCode"
               />
             </div>
             <div>
               <label>City : </label>
-              <input type="text" name="City" ngModel placeholder="City" />
+              <input type="text" name="city" ngModel placeholder="City" />
             </div>
             <button type="submit">Submit</button>
           </form>
