@@ -9,6 +9,7 @@ import { ProductComponent } from './product/product/product.component';
 import { OrderComponent } from './order/order/order.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,9 +21,11 @@ import { OrderComponent } from './order/order/order.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+   
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  
 })
 export class AppModule { }

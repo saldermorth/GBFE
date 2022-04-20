@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { customer } from '../Services/customers.service';
 import { HttpGetCustomerService } from '../Services/http-get-customer.service';
 
@@ -15,10 +15,36 @@ updatedCustomer? : customer;
   constructor(private httpService : HttpGetCustomerService) { }
  @Input()
   valtPaket?: customer;
-  
+
+  CRUD: number = 0;
+  ShowCustomer: boolean = false;
+@Output()
+foundcustomer? : customer;
+
   ngOnInit(): void {
     this.getCustomer();
   }
+Create(){
+this.CRUD =1 ;
+}
+Read(){
+  this.CRUD =2 ;
+}
+Update(){
+this.CRUD =3 ;
+}
+Delete(){
+this.CRUD =4 ;
+}
+findCustomer(data: string): void
+{  
+  this.httpService.getCustomerByEmail(data).subscribe((response: customer) =>{this.foundcustomer = response, console.log(this.foundcustomer)} )
+
+}
+onSubmitCreate(data: customer){
+this.httpService.postCustomer(data).subscribe();
+}
+
 onSubmit(data: customer): void {
     this.updatedCustomer = this.valtPaket;
 console.log(data);
@@ -26,15 +52,11 @@ console.log(data);
     {
       return;
     }
-    // const booking = new customer(this.namnet, this.bokningssvar); //skickar
-    // this.bookingservice
-    //   .SkickaBokning(booking)
-    //   .subscribe((svar: Bokningscomfirm) => {
-    //     this.result = svar;
-    //   }); //får tilbaka
-    // this.avbryt.emit(true);
-    // //Skicka till kvitto
-     }
+}
+deleteCustomer(id: customer): void{
+  this.httpService.deleteCustomer(id.id).subscribe();
+}
+  
 
   getCustomer(): void {
     this.httpService.getCustomers().subscribe((response: Array<customer>) => {
@@ -42,35 +64,9 @@ console.log(data);
       console.log(response);
     });
 
-}
-/*import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { SkidItem } from 'src/app/entities/skid-paket';
-import { HttpGetProductsService } from '../services/http-get-products.service';
-
-@Component({
-  selector: 'app-skid-paket-lista',
-  templateUrl: './skid-paket-lista.component.html',
-  styleUrls: ['./skid-paket-lista.component.scss'],
-})
-export class SkidPaketListaComponent implements OnInit {
-  skidoritemarray?: SkidItem[];
-
-  @Output()
-  valtpaket = new EventEmitter<SkidItem>();
-  constructor(private httpService: HttpGetProductsService) {}
-
-  ngOnInit(): void {
-    this.getProducts();
   }
 
-  getProducts(): void {
-    this.httpService.getProducts().subscribe((response: Array<SkidItem>) => {
-      this.skidoritemarray = response;
-      console.log(response);
-    });
-  }
 
-  IncomingMessage(paket: SkidItem) {
-    this.valtpaket.emit(paket);
-  }*/
+  
 }
+

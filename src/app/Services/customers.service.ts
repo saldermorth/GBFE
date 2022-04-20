@@ -3,12 +3,8 @@ export interface customer {
   firstName: string; 
   lastName: string;
   email: string;
-  Address: string; 
+  street: string;
+  zipCode: number;
+  city: string;
 }
 
-/*"id": 1,
-        "firstName": "Gustav",
-        "lastName": "Berg",
-        "email": "berg@domain.com",
-        "address": null,
-        "orders": []*/
