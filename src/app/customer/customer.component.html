@@ -67,7 +67,7 @@
 
     <div name="Read" *ngIf="CRUD == 2">
       <h1>Read</h1>
-      <button (ngSubmit)="getCustomer()">Update</button>
+      <button (click)="getCustomer()">Update</button>
       <table class="table">
         <thead class="thead-dark">
           <tr>
@@ -81,6 +81,12 @@
           </tr>
         </thead>
         <tr class="table" *ngFor="let customer of customers">
+          <!-- <th
+            class="col"
+            [(ngModel)]="customer.id"
+            name="name"
+            required=""
+          ></th> -->
           <th class="col">{{ customer.id }}</th>
           <th class="col">{{ customer.firstName }}</th>
           <th class="col">{{ customer.lastName }}</th>

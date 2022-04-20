@@ -29,6 +29,7 @@ this.CRUD =1 ;
 }
 Read(){
   this.CRUD =2 ;
+  this.getCustomer();
 }
 Update(){
 this.CRUD =3 ;
