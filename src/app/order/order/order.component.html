@@ -1,1 +1,168 @@
-<p>order works!</p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <ul class="list-group list-group-horizontal">
+      <li routerLinkActive="btn-primary " class="list-group-item"></li>
+      <!-- <li (click)="Create()" class="list-group-item"><a>Create</a></li> -->
+      <li (click)="Read()" class="list-group-item"><a>Read</a></li>
+      <!-- <li (click)="Update()" class="list-group-item"><a>Update</a></li>
+      <li (click)="Delete()" class="list-group-item"><a>Delete</a></li> -->
+    </ul>
+    <!-- 
+    <div *ngIf="CRUD == 1">
+      <h1>Create User</h1>
+      <div class="border">
+        <form
+          #customerPost="ngForm"
+          (ngSubmit)="onSubmitCreate(customerPost.value)"
+          action="submit"
+          class="col bokaform"
+        >
+          <div>
+            <label>FirstName : </label>
+            <input
+              type="text"
+              ngModel
+              name="FirstName"
+              placeholder="FirstName"
+            />
+          </div>
+          <div>
+            <label>LastName : </label>
+            <input
+              type="text"
+              ngModel
+              name="LastName"
+              placeholder="Last Name"
+            />
+          </div>
+          <div>
+            <label>Email : </label>
+            <input type="text" ngModel name="Email" placeholder="Email" />
+          </div>
+          <div>
+            <label>Street : </label>
+            <input type="text" name="Street" ngModel placeholder="Street" />
+          </div>
+          <div>
+            <label>ZipCode : </label>
+            <input type="number" name="ZipCode" ngModel placeholder="ZipCode" />
+          </div>
+          <div>
+            <label>City : </label>
+            <input type="text" name="City" ngModel placeholder="City" />
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      <br />
+    </div>
+
+    <div name="Read" *ngIf="CRUD == 2">
+      <h1>Read</h1>
+      <button (click)="getCustomer()">Update</button>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th class="col">Id</th>
+            <th class="col">First Name</th>
+            <th class="col">Last Name</th>
+            <th class="col">Email</th>
+            <th class="col">Street</th>
+            <th class="col">ZipCode</th>
+            <th class="col">City</th>
+          </tr>
+        </thead>
+        <tr class="table" *ngFor="let customer of customers">
+     
+          <th class="col">{{ customer.id }}</th>
+          <th class="col">{{ customer.firstName }}</th>
+          <th class="col">{{ customer.lastName }}</th>
+          <th class="col">{{ customer.email }}</th>
+          <th class="col">{{ customer.street }}</th>
+          <th class="col">{{ customer.zipCode }}</th>
+          <th class="col">{{ customer.city }}</th>
+        </tr>
+      </table>
+    </div>
+
+    <div name="Update" *ngIf="CRUD == 3">
+      <h1>Update by Id</h1>
+      <div>
+        <div class="border">
+          <form
+            #customerPut="ngForm"
+            (ngSubmit)="onSubmitUpdate(customerPut.value)"
+            action="submit"
+            class="col bokaform"
+          >
+            <div>
+              <label>Id : </label>
+              <input type="text" ngModel name="id" placeholder="Id" />
+            </div>
+            <div>
+              <label>FirstName : </label>
+              <input
+                type="text"
+                ngModel
+                name="firstName"
+                placeholder="FirstName"
+              />
+            </div>
+            <div>
+              <label>LastName : </label>
+              <input
+                type="text"
+                ngModel
+                name="lastName"
+                placeholder="Last Name"
+              />
+            </div>
+            <div>
+              <label>Email : </label>
+              <input type="text" ngModel name="email" placeholder="Email" />
+            </div>
+            <div>
+              <label>Street : </label>
+              <input type="text" name="street" ngModel placeholder="Street" />
+            </div>
+            <div>
+              <label>ZipCode : </label>
+              <input
+                type="number"
+                name="zipCode"
+                ngModel
+                placeholder="ZipCode"
+              />
+            </div>
+            <div>
+              <label>City : </label>
+              <input type="text" name="city" ngModel placeholder="City" />
+            </div>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+        <br />
+      </div>
+    </div>
+    <div name="Delete" *ngIf="CRUD == 4">
+      <h1>Delete by Id</h1>
+      <form
+        #customerDelete="ngForm"
+        action="submit"
+        (ngSubmit)="deleteCustomer(customerDelete.value)"
+      >
+        <label>Enter id of customer you wish to delete</label>
+        <input ngModel name="id" type="number" />
+        <button type="submit" class="primary-btn">Submit</button>
+      </form>
+    </div> -->
+  </body>
+</html>
