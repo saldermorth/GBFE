@@ -1,11 +1,12 @@
 import { Cartitemsupdate } from "./cartitemsupdate.service";
 
 export interface OrderService {
-Id: number;
-CustomerId: number;
-CartUpdateItems: Cartitemsupdate[];
+id: number;
+customerId: number;
+orderStatus: string;
+cartUpdateItems: Cartitemsupdate[];
   
+
+
 }
-
-
 

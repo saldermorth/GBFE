@@ -7,6 +7,7 @@ import { CustomerComponent } from './customer/customer.component';
 import { FormsModule } from '@angular/forms';
 import { ProductComponent } from './product/product/product.component';
 import { OrderComponent } from './order/order/order.component';
+import { CustomerCartActiveService } from './Services/customer-cart-active.service';
 
 
 
@@ -24,7 +25,7 @@ import { OrderComponent } from './order/order/order.component';
     FormsModule,
    
   ],
-  providers: [],
+  providers: [CustomerCartActiveService],
   bootstrap: [AppComponent],
   
 })
