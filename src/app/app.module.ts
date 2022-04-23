@@ -10,6 +10,7 @@ import { ProductComponent } from './product/product/product.component';
 import { OrderComponent } from './order/order/order.component';
 import { LoginComponent } from './login/login.component';
 import { authInterceptorProviders } from './helpers/auth.interceptor';
+import { RegisterComponent } from './register/register.component';
 
 
 
@@ -22,7 +23,8 @@ import { authInterceptorProviders } from './helpers/auth.interceptor';
     CustomerComponent,
  ProductComponent,
  OrderComponent,
- LoginComponent
+ LoginComponent,
+ RegisterComponent
   ],
   imports: [
     BrowserModule,

@@ -5,6 +5,7 @@ import {
   customersigin,
   customersigup,
 } from '../Services/customers.service';
+import { TokenStorageService } from '../Services/token-storage.service';
 
 @Component({
   selector: 'app-login',
@@ -12,12 +13,29 @@ import {
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
+  form: any = {
+    username: null,
+    password: null,
+  };
+  isLoggedIn = false;
+  isLoginFailed = false;
+  errorMessage = '';
+  roles: string[] = [];
+
   @Input()
   createUser?: boolean = true;
 
-  constructor(private httpService: AuthentificationService) {}
+  constructor(
+    private httpService: AuthentificationService,
+    private tokenStorage: TokenStorageService
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (this.tokenStorage.getToken()) {
+      this.isLoggedIn = true;
+      this.roles = this.tokenStorage.getUser().roles;
+    }
+  }
   onSubmitSignIn(data: customersigin) {
     this.httpService.login(data.username, data.password).subscribe((data) => {
       console.log('Login sent' + data.username);
@@ -28,21 +46,5 @@ export class LoginComponent implements OnInit {
   }
   LogInSelected() {
     this.createUser = false;
-  }
-  onSubmitCreate(data: customersigup) {
-    console.log(data);
-    this.httpService
-      .register(
-        data.city,
-        data.email,
-        data.firstName,
-        data.lastName,
-        data.password,
-        data.street,
-        data.zipCode
-      )
-      .subscribe((data) => {
-        console.log('fgh');
-      });
   }
 }
