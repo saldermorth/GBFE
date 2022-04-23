@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+li {
+  width: 200px;
+}
+li:hover {
+  width: 210px;
+  height: 20px;
+  text-decoration: underline;
+}
