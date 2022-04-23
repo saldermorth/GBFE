@@ -48,6 +48,7 @@ export class AuthentificationService {
     );
   }
 }
+
 function httpOptions(
   arg0: string,
   arg1: { username: string; password: string },
