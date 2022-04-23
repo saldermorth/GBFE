@@ -4,7 +4,8 @@ import { HttporderService } from 'src/app/Services/httporder.service';
 import { OrderService } from 'src/app/Services/order.service';
 import { CustomerCartActiveService } from 'src/app/Services/customer-cart-active.service';
 import { ProductService } from 'src/app/Services/product.service';
-import { HttpproductService } from 'src/app/httpproduct.service';
+import { HttpproductService } from 'src/app/Services/httpproduct.service';
+
 
 @Component({
   selector: 'app-order',

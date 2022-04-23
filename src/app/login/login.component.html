@@ -1,0 +1,85 @@
+<div *ngIf="true">
+  <h1>Create User</h1>
+  <div class="border">
+    <form
+      #customerReg="ngForm"
+      novalidate
+      (ngSubmit)="onSubmitCreate(customerReg.value)"
+      action="submit"
+      class="col bokaform"
+    >
+      <div>
+        <label>FirstName : </label>
+        <input
+          type="text"
+          ngModel
+          name="firstName"
+          placeholder="FirstName"
+          #firstName="ngModel"
+        />
+      </div>
+      <div>
+        <label>LastName : </label>
+        <input
+          type="text"
+          ngModel
+          name="lastName"
+          placeholder="Last Name"
+          #lastName="ngModel"
+        />
+      </div>
+      <div>
+        <label>Email : </label>
+        <input
+          type="email"
+          ngModel
+          name="email"
+          placeholder="Email"
+          #email="ngModel"
+        />
+      </div>
+      <div>
+        <label>Street : </label>
+        <input
+          type="text"
+          name="street"
+          ngModel
+          placeholder="Street"
+          #street="ngModel"
+        />
+      </div>
+      <div>
+        <label>ZipCode : </label>
+        <input
+          type="number"
+          name="zipCode"
+          ngModel
+          placeholder="ZipCode"
+          #zipCode="ngModel"
+        />
+      </div>
+      <div>
+        <label>City : </label>
+        <input
+          type="text"
+          name="city"
+          ngModel
+          placeholder="City"
+          #city="ngModel"
+        />
+      </div>
+      <div>
+        <label>Password : </label>
+        <input
+          type="text"
+          name="password"
+          ngModel
+          placeholder="Password"
+          #password="ngModel"
+        />
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  <br />
+</div>

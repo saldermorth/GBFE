@@ -5,9 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CustomerComponent } from './customer/customer.component';
 import { FormsModule } from '@angular/forms';
+import { CustomerCartActiveService } from './Services/customer-cart-active.service';
 import { ProductComponent } from './product/product/product.component';
 import { OrderComponent } from './order/order/order.component';
-import { CustomerCartActiveService } from './Services/customer-cart-active.service';
+import { LoginComponent } from './login/login.component';
+import { authInterceptorProviders } from './helpers/auth.interceptor';
+
+
+
 
 
 
@@ -15,8 +20,9 @@ import { CustomerCartActiveService } from './Services/customer-cart-active.servi
   declarations: [
     AppComponent,
     CustomerComponent,
-    ProductComponent,
-    OrderComponent,
+ ProductComponent,
+ OrderComponent,
+ LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +31,7 @@ import { CustomerCartActiveService } from './Services/customer-cart-active.servi
     FormsModule,
    
   ],
-  providers: [CustomerCartActiveService],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent],
   
 })
