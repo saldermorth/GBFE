@@ -5,36 +5,26 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CustomerComponent } from './customer/customer.component';
 import { FormsModule } from '@angular/forms';
-import { CustomerCartActiveService } from './Services/customer-cart-active.service';
 import { ProductComponent } from './product/product/product.component';
 import { OrderComponent } from './order/order/order.component';
 import { LoginComponent } from './login/login.component';
-import { authInterceptorProviders } from './helpers/auth.interceptor';
-import { RegisterComponent } from './register/register.component';
-
-
-
-
-
+import { RegisterComponent } from './Register/register.component';
+import { ProfileComponent } from './profile/profile.component';
+import { authInterceptorProviders } from './_helpers/auth.interceptor';
+import { CustomerCartActiveService } from './Services/customer-cart-active.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     CustomerComponent,
- ProductComponent,
- OrderComponent,
- LoginComponent,
- RegisterComponent
+    ProductComponent,
+    OrderComponent,
+    LoginComponent,
+    RegisterComponent,
+    ProfileComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-   
-  ],
-  providers: [authInterceptorProviders],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  providers: [authInterceptorProviders, CustomerCartActiveService],
   bootstrap: [AppComponent],
-  
 })
-export class AppModule { }
+export class AppModule {}

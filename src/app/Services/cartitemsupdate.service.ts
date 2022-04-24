@@ -1,10 +1,12 @@
-
 export interface Cartitemsupdate {
-Id : number;
-ProductName: string;
-Price: number;
-Quantity: number;
-  
+  ProductId: number;
+  ProductName: string;
+  Price: number;
+  Quantity: number;
 }
-
- 
+const category: Cartitemsupdate = {
+  ProductId: 99,
+  ProductName: 'string',
+  Price: 0,
+  Quantity: 0,
+};

@@ -1,1 +1,33 @@
-<p>product works!</p>
+<!-- <div class="border">
+  <h6>Cart</h6>
+  <ul>
+    <li>{{ returnCart() }}</li>
+    <li *ngFor="let item; in: cart">
+      <h1></h1>
+    </li>
+  </ul>
+</div> -->
+<h1>Cart</h1>
+<div class="border" *ngFor="let item of cart">
+  <h6>{{ item.ProductName }}</h6>
+  <h6>{{ item.Quantity }}</h6>
+</div>
+
+<div *ngFor="let product of products">
+  <div class="col-md-6 col-lg-4 col-xl-3 border">
+    <div id="product-1" class="single-product">
+      <div class="part-1"></div>
+      <div class="part-2">
+        <h1 class="border">📸</h1>
+        <h3 class="product-title">{{ product.productName }}</h3>
+        <h4 class="product-old-price">sek {{ product.price }}</h4>
+        <h6 class="product-old-price">{{ product.description }}</h6>
+        <h4 class="product-price">$49.99</h4>
+        <button (click)="cartChecker(product)">
+          🛒
+          <i class="fas fa-shopping-cart"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

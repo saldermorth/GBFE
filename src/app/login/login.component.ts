@@ -36,7 +36,27 @@ export class LoginComponent implements OnInit {
       this.roles = this.tokenStorage.getUser().roles;
     }
   }
-  onSubmitSignIn(data: customersigin) {
+  reloadPage(): void {
+    window.location.reload();
+  }
+  onSubmitSignIn(data: customersigin): void {
+    this.httpService.login(data.username, data.password).subscribe(
+      (data) => {
+        this.tokenStorage.saveToken(data.accessToken);
+        this.tokenStorage.saveToken(data);
+        this.isLoginFailed = false;
+        this.isLoggedIn = true;
+        this.roles = this.tokenStorage.getUser().roles;
+        this.reloadPage();
+      },
+      (err) => {
+        this.errorMessage = err.error.message;
+        this.isLoginFailed = true;
+      }
+    );
+  }
+
+  ss(data: customersigin) {
     this.httpService.login(data.username, data.password).subscribe((data) => {
       console.log('Login sent' + data.username);
     });

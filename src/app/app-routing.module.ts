@@ -5,7 +5,7 @@ import { CustomerComponent } from './customer/customer.component';
 import { LoginComponent } from './login/login.component';
 import { OrderComponent } from './order/order/order.component';
 import { ProductComponent } from './product/product/product.component';
-import { RegisterComponent } from './register/register.component';
+import { RegisterComponent } from './Register/register.component';
 
 const routes: Routes = [
   { path: 'Login', component: LoginComponent },

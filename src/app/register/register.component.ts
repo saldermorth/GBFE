@@ -14,7 +14,6 @@ export class RegisterComponent implements OnInit {
   constructor(private httpService: AuthentificationService) {}
 
   ngOnInit(): void {}
-  onSubmitReg(g: any) {}
 
   //   onSubmitCreate(data: customersigup) {
   //     console.log(data);
@@ -33,7 +32,7 @@ export class RegisterComponent implements OnInit {
   //       });
   //   }
   // }
-  onSubmitCreate(data: customersigup) {
+  onSubmitReg(data: customersigup) {
     this.httpService
       .register(
         data.city,
